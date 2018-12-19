@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    //Layout = null;
+}
+
+
+<div class="row">
+    @using (Html.BeginForm("Download", "Home", FormMethod.Post))
+    {
+    <fieldset>
+        <input type="text" placeholder="Url" class="form-control" name="url" />
+        <input type="text" placeholder="Password" class="form-control" name="password" />
+        <input type="text" placeholder="Path" class="form-control" name="path" /><br /><hr />
+        <input type="submit" class="btn btn-lg btn-default" value="Download" />
+    </fieldset>
+    }
+</div>
