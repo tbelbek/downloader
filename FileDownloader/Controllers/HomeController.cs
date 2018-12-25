@@ -35,6 +35,11 @@ namespace FileDownloader.Controllers
             return View();
         }
 
+        public ActionResult Download()
+        {
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public async Task<ActionResult> Download(DownloadData data)
         {
