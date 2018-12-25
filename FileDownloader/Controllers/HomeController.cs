@@ -39,9 +39,10 @@ namespace FileDownloader.Controllers
         public async Task<ActionResult> Download(DownloadData data)
         {
             var service = new SmtpService();
-            if (data.Password != ConfigurationSettings.AppSettings["Password"])
+
+            if (data.Path == string.Empty)
             {
-                service.SendMail("Info", $"Malicious download attempt ", "destructer9@gmail.com");
+                return View("Index");
             }
 
             try
